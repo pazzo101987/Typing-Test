@@ -42,10 +42,20 @@ function compareWords(str1, str2) {
   let words1 = str1.split(" ");
   let words2 = str2.split(" ");
   let count = 0;
+  let err = 0;
   words1.forEach((el, index) => {
     if (el == words2[index]) {
       count++;
+    } else if (el != words2[index]) {
+      err++;
     }
   });
-  return count + " correct words out of " + words1.length + " words";
+  return (
+    count +
+    " correct words and " +
+    err +
+    " error(s) out of " +
+    words1.length +
+    " words"
+  );
 }
